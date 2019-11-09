@@ -23,13 +23,3 @@ class FireB:
 
     def updateValue(self, value):
         self.firebase.put('/', '/Btnstate', value)
-
-
-
-fireb = FireB()
-
-print(fireb.getLight())
-fireb.updateValue(0)
-
-
-
