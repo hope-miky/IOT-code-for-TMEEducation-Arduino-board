@@ -1,25 +1,27 @@
 from firebase import firebase
 from time import sleep
+import asyncio
 
 class FireB:
     def __init__(self):
         self.firebase = firebase.FirebaseApplication('https://iotfortme.firebaseio.com', None)
         
     
-    def getTemprature(self):
-        return self .firebase.get('/Temp', None)
+    async def getTemprature(self):
+        return await self .firebase.get('/Temp', None)
     
     def setTempature(self, temp):
         self.firebase.put('/', '/Temp', temp)
+        sleep(2)
     
-    def getLight(self):
-        return self.firebase.get('/Light', None)
+    async def getLight(self):
+        return await self.firebase.get('/Light', None)
         
-    def setLight(self, light):
-        self.firebase.put('/', '/Light', light)
+    async def setLight(self, light):
+        await self.firebase.put('/', '/Light', light)
 
-    def getTheHoledata(self):
-        return self.firebase.get('/', None)
+    async def getTheHoledata(self):
+        return await self.firebase.get('/', None)
 
-    def updateValue(self, value):
-        self.firebase.put('/', '/Btnstate', value)
+    async def updateValue(self, value):
+        await self.firebase.put('/', '/Btnstate', value)

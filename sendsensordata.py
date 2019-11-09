@@ -1,6 +1,7 @@
 import firebaseClass
 import serialconnector 
 from time import sleep
+import asyncio
 
 class sendS:
     def __init__(self):
@@ -10,9 +11,10 @@ class sendS:
     
     def main(self):
         self.tempVal = self.sc.getSerialData()
+        #sleep(2)
         print(self.tempVal)
         self.fc.setTempature(self.tempVal)
-        sleep(1)
+        #sleep(3)
 
 
 
