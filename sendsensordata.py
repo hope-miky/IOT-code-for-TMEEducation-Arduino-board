@@ -14,7 +14,6 @@ class sendS:
     def main(self):
         
         self.tempVal = self.sc.getSerialData()
-        #sleep(2)
         if len(self.tempVal)>1:
           print(self.tempVal)
           self.fc.setTempature(self.tempVal)
