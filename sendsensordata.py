@@ -9,10 +9,8 @@ class sendS:
       self.sc = serialconnector.serialClass()
       self.tempVal = 0
       self.t1 = ""
-      
     
-    def main(self):
-        
+    def main(self): 
         self.tempVal = self.sc.getSerialData()
         if len(self.tempVal)>1:
           print(self.tempVal)
